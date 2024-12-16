@@ -10,7 +10,7 @@ body{    background-image: url(https://www.freecodecamp.org/news/content/images/
 }
 .input-things{
      display: grid;
-     grid-template-columns: 200px 150px 100px;
+     grid-template-columns: 200px 150px 100px 100px;
      column-gap: 10px;
      row-gap: 10px;
      margin-top: 10px;
@@ -23,14 +23,31 @@ body{    background-image: url(https://www.freecodecamp.org/news/content/images/
     background-image: url(https://i.pinimg.com/736x/70/e8/56/70e856bd6c1a00d26221b5afcf657686.jpg);
     border: none;
 }
-.btn-delete{
+.input-things input:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+/* Delete Button */
+.btn-delete {
     font-size: 15px;
     padding: 10px 5px;
-    background-color: #750100;
+    background-color: #dc3545; /* Bootstrap red for delete */
     border-radius: 10px;
     color: #ffffff;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-left: 5px; /* Add spacing between buttons */
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Slightly darker red for hover effect */
+    opacity: 0.9; /* Softens the hover effect */
+}
+
+.btn-delete:active {
+    transform: scale(0.95); /* Slight shrink effect for button press */
+    background-color: #bd2130; /* Even darker red when active */
 }
 .btn-todo{
     font-size: 15px;
@@ -39,7 +56,75 @@ body{    background-image: url(https://www.freecodecamp.org/news/content/images/
     border-radius: 10px;
     color: #ffffff;
     cursor: pointer;
+    grid-column: span 2;
 }
 .middle{
     grid-column: span 2;
+}
+.modify-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 2px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modify-section input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.modify-section input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.modify-section button {
+    width: 20%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.modify-section button:hover {
+    opacity: 0.9;
+}
+
+.modify-section button:nth-child(1) {
+    background-color: #28a745;
+    color: white;
+}
+
+.modify-section button:nth-child(2) {
+    background-color: #dc3545;
+    color: white;
+}
+.btn-modify {
+    background-color: #ffc107; /* Amber color for 'Edit' */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 2px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-left: 5px; /* Add spacing between buttons */
+}
+
+.btn-modify:hover {
+    background-color: #e0a800; /* Darker amber on hover */
+    opacity: 0.9;
 }
